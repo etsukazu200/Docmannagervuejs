@@ -1,18 +1,30 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div id="tete">
+    <Menue> </Menue>
+    </div>
+    <div id="gauche"> lift</div>
+    <div id="centre"> 
+      <router-view/>
+  </div>
+  <div id="droite">right</div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import Menue from './components/Menue.vue'
+import route from './Router.js'
 export default {
   name: 'App',
+  router:route,
   components: {
-    HelloWorld
-  }
+     
+    Menue
+  },
+  data:function(){
+      return {  }
+  },
+
 }
 </script>
 
@@ -23,6 +35,28 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  
 }
+#tete {
+
+width:100%;
+display:flex;
+position:relative;
+}
+#gauche{
+width:150px;
+float:left;
+display:block;
+}
+#centre{
+width:calc(100% - 318px);
+float:left;
+display:block;
+}
+#droite{
+  width:150px;
+  float:right;
+  
+}
+
 </style>
